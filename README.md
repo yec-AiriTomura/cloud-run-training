@@ -50,7 +50,7 @@ asia-northeast1-docker.pkg.dev/xxxxxxxxxxx/repo-xxxxxx-xxxxxxxx/ws-flask-app:lat
 記入欄
 
 ```plain
-xxxxx/ws-flask-app:latest
+asia-northeast1-docker.pkg.dev/env95-cloudruntraining/repo-tomura-airi/ws-flask-app:latest
 ```
 
 ### イメージのビルド
@@ -68,7 +68,7 @@ $ docker build -t asia-northeast1-docker.pkg.dev/xxxxxxxxxxx/repo-xxxxxx-xxxxxxx
 記入欄
 
 ```plain
-docker build -t xxxxx/ws-flask-app:latest
+docker build -t asia-northeast1-docker.pkg.dev/env95-cloudruntraining/repo-tomura-airi/ws-flask-app:latest
 ```
 
 作成したイメージをリポジトリに置く
@@ -86,7 +86,7 @@ $ docker push asia-northeast1-docker.pkg.dev/xxxxxxxxxxx/repo-xxxxxx-xxxxxxxx/ws
 記入欄
 
 ```plain
-docker push xxxxx/ws-flask-app:latest
+docker push asia-northeast1-docker.pkg.dev/env95-cloudruntraining/repo-tomura-airi/ws-flask-app:latest
 ```
 
 ## Cloud Runにデプロイ
@@ -101,9 +101,9 @@ $ gcloud run deploy {アプリ名} \
 例
 
 ```bash
-$ gcloud run deploy cloud-run-xxxxx \
-    --image asia-northeast1-docker.pkg.dev/xxxxxxxxxxx/repo-xxxxxx-xxxxxxxx/ws-flask-app:latest \
-    --region asia-northeast1
+$ gcloud run deploy cloud-run-cloud-run-airi-tomura \
+    --image asia-northeast1-docker.pkg.dev/env95-cloudruntraining/repo-tomura-airi/ws-flask-app:latest \
+    --region asia-northeast1 \
     --port 8080
 ```
 
@@ -119,7 +119,7 @@ $ gcloud run deploy cloud-run-xxxxx \
 ## Cloud Runで立ち上がっているアプリにアクセス
 
 ```bash
-$ gcloud run services proxy {アプリ名} --region asia-northeast1
+$ gcloud run services proxy cloud-run-cloud-run-airi-tomura --region asia-northeast1 --8082
 ```
 
 例
